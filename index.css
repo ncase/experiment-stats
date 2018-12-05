@@ -1,0 +1,16 @@
+body{
+	margin: 60px auto;
+	max-width: 600px;
+	line-height: 1.6em;
+	font-size: 19px;
+}
+h1,h2,h3{
+	line-height:1.2em;
+}
+input{
+	width:100%;
+}
+.fade{
+	opacity: 0;
+	transition: opacity 0.5s ease-in-out;
+}
