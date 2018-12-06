@@ -1,5 +1,5 @@
 body{
-	margin: 60px auto;
+	margin: 60px auto 300px auto;
 	max-width: 600px;
 	line-height: 1.6em;
 	font-size: 19px;
@@ -9,6 +9,9 @@ h1,h2,h3{
 }
 input{
 	width:100%;
+}
+#stats > div{
+	margin-bottom: 2.5em;
 }
 .fade{
 	opacity: 0;
