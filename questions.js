@@ -5,8 +5,10 @@ var QUESTIONS = [
 
 	// Democracy
 	{
+		img: "cat.jpg",
 		q: "What % of the world's population lives in a democracy?",
-		label: "In 2015, <b>[N]%</b> of the human beings lived in a democracy",
+		label: "In 2015, <b>[N]%</b> of human beings lived in a democracy",
+		label2: "In 2015, <b>[N]%</b> of the world's population lived in a democracy",
 		slider:{ min:0, max:100, step:1 },
 		defaultValue: 0,
 		answerValue: 56,
@@ -16,19 +18,25 @@ var QUESTIONS = [
 
 	// Air Pollution
 	{
-		q: "How has air pollution changed? (measured in micrograms per cubic meter of air)",
-		label: "From 1990 to 2015, air pollution <b>{decreased by [N]%|stayed the same|increased by [N]%}</b>",
+		img: "cat.jpg",
+		q: "How has air pollution (small suspended particles) changed?",
+		label: "From 1990 to 2016, air pollution <b>{decreased by [N]%|stayed the same|increased by [N]%}</b>",
+		label2: "From 1990 to 2016, air pollution <b>{decreased by [N]%|stayed the same|increased by [N]%}</b>",
 		slider:{ min:-100, max:100, step:1 },
 		defaultValue: 0,
-		answerValue: 11,
-		footnote: "from 39.57 to 43.98 µg/m<sup>3</sup>",
+		answerValue: 25,
+		footnote: "from 39.58 to 49.67 micrograms per cubic meter of air",
 		source: "https://ourworldindata.org/grapher/PM25-air-pollution?tab=chart&country=OWID_WRL"
 	},
 
+	/*	
+
 	// Mental Health
 	{
+		img: "cat.jpg",
 		q: "What % of the worldwide population has at least one mental health or substance abuse disorder?",
-		label: "In 2016, <b>[N]%</b> of people have mental/substance abuse issues",
+		label: "In 2016, <b>[N]%</b> had mental/substance abuse issues",
+		label2: "In 2016, <b>[N]%</b> of the world's population had at least one mental health/substance abuse disorder",
 		slider:{ min:0, max:100, step:1 },
 		defaultValue: 0,
 		answerValue: 15,
@@ -38,8 +46,10 @@ var QUESTIONS = [
 
 	// Childbirth
 	{
-		q: "How has the world's fertility rate (live births per woman) changed?",
+		img: "cat.jpg",
+		q: "How has the world's fertility rate (# of children a woman has over a lifetime) changed?",
 		label: "From 1950 to 2015, the fertility rate <b>{decreased by [N]%|stayed the same|increased by [N]%}</b>",
+		label2: "From 1950 to 2015, the fertility rate <b>{decreased by [N]%|stayed the same|increased by [N]%}</b>",
 		slider:{ min:-100, max:100, step:1 },
 		defaultValue: 0,
 		answerValue: -51,
@@ -49,8 +59,10 @@ var QUESTIONS = [
 
 	// Global CO2 emissions
 	{
-		q: "How much has global annual CO<sub>2</sub> emissions changed?",
+		img: "cat.jpg",
+		q: "How much has global annual CO<sub>2</sub> emissions changed in the past half-century?",
 		label: "From 1959 to 2016, CO<sub>2</sub> emissions <b>{decreased by [N]%|stayed the same|increased by [N]%}</b>",
+		label2: "From 1959 to 2016, CO<sub>2</sub> emissions <b>{decreased by [N]%|stayed the same|increased by [N]%}</b>",
 		slider:{ min:0, max:400, step:1 },
 		defaultValue: 0,
 		answerValue: 302,
@@ -60,8 +72,10 @@ var QUESTIONS = [
 
 	// Suicide
 	{
+		img: "cat.jpg",
 		q: "How has the worldwide (age-standardized) suicide death rate changed?",
 		label: "From 1990 to 2016, the suicide rate <b>{decreased by [N]%|stayed the same|increased by [N]%}</b>",
+		label2: "From 1990 to 2016, the worldwide (age-standardized) suicide rate <b>{decreased by [N]%|stayed the same|increased by [N]%}</b>",
 		slider:{ min:-100, max:100, step:1 },
 		defaultValue: 0,
 		answerValue: -33,
@@ -71,19 +85,23 @@ var QUESTIONS = [
 
 	// Extreme Poverty
 	{
+		img: "cat.jpg",
 		q: "How has the worldwide % of people in extreme poverty (less than $1.9/day, inflation-adjusted) changed?",
-		label: "From 1910 to 2015, the extreme poverty rate <b>{decreased by [N]%|stayed the same|increased by [N]%}</b>",
+		label: "From 1910 to 2015, extreme poverty <b>{decreased by [N]%|stayed the same|increased by [N]%}</b>",
+		label2: "From 1910 to 2015, the world extreme poverty rate (less than $1.9/day, inflation-adjusted) <b>{decreased by [N]%|stayed the same|increased by [N]%}</b>",
 		slider:{ min:-100, max:100, step:1 },
 		defaultValue: 0,
 		answerValue: -88,
-		footnote: "from 82.4% to 9.6%. note that's an absolute drop by 73 <i>percentage-points</i>, but a relative drop by 88 <i>percent.</i> sorry, stats language is weird.",
+		footnote: "from 82.4% to 9.6%. note that's an absolute drop by 73 <i>percentage-points</i>, but a relative drop by 88 <i>percent.</i> sorry, stats language can be confusing.",
 		source: "https://ourworldindata.org/grapher/world-population-in-extreme-poverty-absolute?stackMode=relative"
 	},
 
 	// Deaths pt 1
 	{
-		q: "What % of worldwide deaths are from (direct) violence?",
-		label: "In 2016, the % of deaths from homicide/war/terrorism was <b>[N]%</b>",
+		img: "cat.jpg",
+		q: "What % of worldwide deaths are from homicide + war + terrorism combined?",
+		label: "In 2016, % of deaths from direct violence was <b>[N]%</b>",
+		label2: "In 2016, % of worldwide deaths from homicide + war + terrorism combined was <b>[N]%</b>",
 		slider:{ min:0, max:100, step:1 },
 		defaultValue: 0,
 		answerValue: 1,
@@ -93,8 +111,10 @@ var QUESTIONS = [
 
 	// Deaths pt 2
 	{
+		img: "cat.jpg",
 		q: "What % of worldwide deaths are from heart disease?",
 		label: "In 2016, the % of deaths from heart disease was <b>[N]%</b>",
+		label2: "In 2016, the % of worldwide deaths from heart disease was <b>[N]%</b>",
 		slider:{ min:0, max:100, step:1 },
 		defaultValue: 0,
 		answerValue: 32,
@@ -104,14 +124,16 @@ var QUESTIONS = [
 
 	// Nuclear Warheads
 	{
+		img: "cat.jpg",
 		q: "How has the number of nuclear warheads in the world changed?",
 		label: "From 1986 to 2014, the # of nukes <b>{decreased by [N]%|stayed the same|increased by [N]%}</b>",
+		label2: "From 1986 to 2014, the # of nuclear warheads in the world <b>{decreased by [N]%|stayed the same|increased by [N]%}</b>",
 		slider:{ min:-100, max:100, step:1 },
 		defaultValue: 0,
 		answerValue: -84,
 		footnote: "from approximately 64,449 to 10,145",
 		source: "https://ourworldindata.org/grapher/number-of-nuclear-warheads-in-the-inventory-of-the-nuclear-powers"
 	}
-
+	*/
 
 ];

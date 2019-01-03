@@ -6,8 +6,55 @@
 </head>
 <body>
 
+<!-- Intro Screen -->
+<div id="intro" class="fullscreen fadeable" style="opacity:1">
+	<div>
+		foo bar foo bar foo bar foo bar 
+		foo bar foo bar foo bar foo bar 
+		foo bar foo bar foo bar foo bar 
+		foo bar foo bar foo bar foo bar 
+		foo bar foo bar foo bar foo bar 
+		foo bar foo bar foo bar foo bar
+		<div class="white_button" onclick='lets_go()'>
+			let's go! ➡️
+		</div>
+	</div>
+</div>
+
 <!-- The stats go here -->
-<div id="stats">
+<div id="stats" class="fadeable">
+</div>
+
+<!-- Survey Screen -->
+<div id="survey" class="fullscreen fadeable">
+	<div>
+		survey survey survey survey survey survey 
+		survey survey survey survey survey survey 
+		survey survey survey survey survey survey 
+		survey survey survey survey survey survey 
+		<div id="survey_foobar"></div>
+		<div class="white_button" onclick='showScreen("debrief")'>
+			done ➡️
+		</div>
+	</div>
+</div>
+
+<!-- Debrief Screen -->
+<div id="debrief" class="fullscreen fadeable" style="background:#fff">
+	<div>
+		<span id="debrief_control">
+		You were in the <b>control group</b>.
+		</span>
+		<span id="debrief_experimental">
+		You were in the <b>experimental group</b>.
+		</span>
+		debrief debrief debrief debrief debrief 
+		debrief debrief debrief debrief debrief 
+		debrief debrief debrief debrief debrief 
+		<br><br>
+		<a href="#" onclick="play_control()">play control</a> |
+		<a href="#" onclick="play_experimental()">play experimental</a>
+	</div>
 </div>
 
 </body>
