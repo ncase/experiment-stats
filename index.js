@@ -4,11 +4,19 @@ window.SKIP_TO_DEBRIEF = false;
 window.BEEN_HERE_BEFORE = localStorage.getItem('been_here_before');
 window.onload = function(){
 
-	gotoCondition("random");
+	gotoCondition("experimental");
 	
 	// Give decoy if from Patreon, or have been here before...
 	if(window.location.hash=="#patreon"){
 		gotoCondition("experimental"); // also give patreon's "experimental"
+		window.GIVE_DECOY_SURVEY = true;
+	}
+	if(window.location.hash=="#experimental"){
+		gotoCondition("experimental");
+		window.GIVE_DECOY_SURVEY = true;
+	}
+	if(window.location.hash=="#control"){
+		gotoCondition("control");
 		window.GIVE_DECOY_SURVEY = true;
 	}
 	if(window.BEEN_HERE_BEFORE){
@@ -156,7 +164,7 @@ function addQuestion(config){
 		q.className = "question";
 		dom.appendChild(q);
 		var q_image = new Image();
-		q_image.src = "cat.jpg";
+		q_image.src = config.img;
 		q.appendChild(q_image);
 		var q_text = document.createElement("div");
 		q.appendChild(q_text);
@@ -177,13 +185,14 @@ function addQuestion(config){
 		_updateGuessLabel();
 
 		// Guess slider
-		var guessSlider = makeSlider(config.slider, config.defaultValue);
-		dom.appendChild(guessSlider);
-		guessSlider.oninput = function(){
-			YOUR_GUESS = parseFloat(guessSlider.value);
+		var guessSlider = makeSlider(config.slider, config.defaultValue, {bg:"#333333"});
+		dom.appendChild(guessSlider.container);
+		guessSlider.input.oninput = function(){
+			YOUR_GUESS = parseFloat(guessSlider.input.value);
+			guessSlider.update_bar();
 			_updateGuessLabel();
 		};
-		guessSlider.onmousedown = guessSlider.ontouchstart = function(){
+		guessSlider.input.onmousedown = guessSlider.input.ontouchstart = function(){
 			answerButton.setAttribute("disabled", "no");
 			answerButton.innerHTML = "show answer";
 		};
@@ -196,10 +205,10 @@ function addQuestion(config){
 		answerButton.innerHTML = "(guess first!)";
 		answerButton.onclick = function(){
 			
-			guessSlider.disabled = true;
+			guessSlider.input.disabled = true;
 			answerButton.style.display = "none";
 			answerLabel.style.opacity = 1;
-			answerSlider.style.opacity = 1;
+			answerSlider.container.style.opacity = 1;
 			footnote.style.opacity = 1;
 
 			setTimeout(function(){
@@ -218,10 +227,11 @@ function addQuestion(config){
 		answerLabel.innerHTML = modifyStringWithNums(config.answerLabel, config.answerValue);
 
 		// Answer slider
-		var answerSlider = makeSlider(config.slider, config.answerValue);
-		dom.appendChild(answerSlider);
-		answerSlider.disabled = true;
-		answerSlider.className = "fade answer_slider";
+		var answerSlider = makeSlider(config.slider, config.answerValue, {bg:"#58a6da"});
+		dom.appendChild(answerSlider.container);
+		answerSlider.container.className = "fade";
+		answerSlider.input.disabled = true;
+		answerSlider.input.className = "answer_slider";
 
 		// footnote
 		var footnote = document.createElement("div");
@@ -237,7 +247,7 @@ function addQuestion(config){
 		q.className = "question";
 		dom.appendChild(q);
 		var q_image = new Image();
-		q_image.src = "cat.jpg";
+		q_image.src = config.img;
 		q.appendChild(q_image);
 		var q_text = document.createElement("div");
 		q.appendChild(q_text);
@@ -246,10 +256,10 @@ function addQuestion(config){
 		q_text.innerHTML = questionNum + "<span class='answer_label'>"+answer+"</span>";
 
 		// Slider, showing the stat
-		var answerSlider = makeSlider(config.slider, config.answerValue);
-		dom.appendChild(answerSlider);
-		answerSlider.disabled = true;
-		answerSlider.className = "answer_slider";
+		var answerSlider = makeSlider(config.slider, config.answerValue, {bg:"#58a6da"});
+		dom.appendChild(answerSlider.container);
+		answerSlider.input.disabled = true;
+		answerSlider.input.className = "answer_slider";
 
 		// footnote
 		var footnote = document.createElement("div");
@@ -285,18 +295,79 @@ var NEXT_BUTTONS = [
 	"more please",
 	"interesting",
 	"how 'bout that",
-	"just one more!"
+	"last one!"
 ]
 
 // Make slider from config
-function makeSlider(conf, value){
+function makeSlider(conf, value, bar_options){
+
+	var container = document.createElement("div");
+	container.setAttribute("slider","yes");
+
 	var slider = document.createElement("input");
+	container.appendChild(slider);
 	slider.type = "range";
 	slider.min = conf.min;
 	slider.max = conf.max;
 	slider.step = conf.step;
 	slider.value = value;
-	return slider;
+
+	var bar = document.createElement("div");
+	bar.style.background = bar_options.bg;
+	container.appendChild(bar);
+	var update_bar = function(){
+		var guess = parseFloat(slider.value);
+		var left = (0-conf.min)/(conf.max-conf.min);
+		var width = guess/(conf.max-conf.min);
+		if(width<0){
+			left = left+width;
+			width = Math.abs(width);
+		}
+		if(conf.min==0){
+			bar.style.borderRadius = "10px 0 0 10px;";
+			bar.style.left = "0px";
+			bar.style.width = ((width*580)+10)+"px";
+		}else{
+			bar.style.left = Math.floor((left*580)+10)+"px";
+			bar.style.width = Math.ceil(width*580)+"px";
+		}
+	};
+	update_bar();
+
+	// TICKS in CONTROL
+	if(window.CONDITION=="control"){
+		container.style.marginTop = "20px";
+
+		var add_tick = function(num){
+
+			var span = document.createElement("span");
+			span.innerHTML = num+"%";
+
+			var x = (num-conf.min)/(conf.max-conf.min);
+			x = Math.floor(x*560);
+			if(x>400){
+				span.style.textAlign = "right";
+			}else if(x>200){
+				span.style.textAlign = "center";
+			}
+			span.style.left = x+"px";
+			container.appendChild(span);
+
+		}
+
+		// add ticks for MIN, MAX, and DEFAULT (if not equal to min)
+		add_tick(conf.max);
+		add_tick(conf.min);
+		if(conf.min<0) add_tick(0);
+
+	}
+
+	return {
+		container: container,
+		update_bar: update_bar,
+		input: slider
+	};
+
 }
 
 // Parse string with nums
