@@ -1,26 +1,26 @@
 window.CONDITION;
-window.GIVE_DECOY_SURVEY = false;
+window.GIVE_REVISIT_SURVEY = false;
 window.SKIP_TO_DEBRIEF = false;
 window.BEEN_HERE_BEFORE = localStorage.getItem('been_here_before');
 window.onload = function(){
 
-	gotoCondition("experimental");
+	gotoCondition("random");
 	
-	// Give decoy if from Patreon, or have been here before...
+	// Give revisit if from Patreon, or have been here before...
 	if(window.location.hash=="#patreon"){
 		gotoCondition("experimental"); // also give patreon's "experimental"
-		window.GIVE_DECOY_SURVEY = true;
+		window.GIVE_REVISIT_SURVEY = true;
 	}
 	if(window.location.hash=="#experimental"){
 		gotoCondition("experimental");
-		window.GIVE_DECOY_SURVEY = true;
+		window.GIVE_REVISIT_SURVEY = true;
 	}
 	if(window.location.hash=="#control"){
 		gotoCondition("control");
-		window.GIVE_DECOY_SURVEY = true;
+		window.GIVE_REVISIT_SURVEY = true;
 	}
 	if(window.BEEN_HERE_BEFORE){
-		window.GIVE_DECOY_SURVEY = true;
+		window.GIVE_REVISIT_SURVEY = true;
 	}
 
 };
@@ -85,8 +85,16 @@ function showScreen(screen_name){
 			break;
 		case "survey":
 			
-			// show the right survey (or decoy, if revisit/patreon)
-			$("#survey_foobar").innerHTML = window.GIVE_DECOY_SURVEY ? "decoy" : window.CONDITION;
+			// show the right survey (or revisit/patreon)
+			var survey_link;
+			if(window.GIVE_REVISIT_SURVEY){
+				survey_link = "1FAIpQLScyKSri3VfAP-D9YicotA3ozM9hIutbTiQhJZDKPIIaQa1cjw"; // revisit
+			}else if(window.CONDITION=="control"){
+				survey_link = "1FAIpQLSdcOenaD3Ta6-E2q613dpE3DUJAcDrpu2OpxFUW18s1ZjoH4A"; // control
+			}else if(window.CONDITION=="experimental"){
+				survey_link = "1FAIpQLSeyubO7738LVv-FLGI6X768khaSxxB0FpBEC1v3PBdnNOA-9Q"; // experimental
+			}
+			$("#survey_embed").innerHTML = '<iframe src="https://docs.google.com/forms/d/e/'+survey_link+'/viewform?embedded=true" width="600" height="3300" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>';
 
 			break;
 		case "debrief":
@@ -97,9 +105,9 @@ function showScreen(screen_name){
 			$("#debrief_control").style.display = "none";
 			$("#debrief_experimental").style.display = "none";
 			if(window.CONDITION=="control"){
-				$("#debrief_control").style.display = "inline-block";
+				$("#debrief_control").style.display = "inline";
 			}else{
-				$("#debrief_experimental").style.display = "inline-block";
+				$("#debrief_experimental").style.display = "inline";
 			}
 
 			break;
@@ -197,6 +205,15 @@ function addQuestion(config){
 			answerButton.innerHTML = "show answer";
 		};
 
+		// ONLY IF FIRST QUESTION: 
+		var instruction;
+		if(QUESTION_INDEX==0){
+			instruction = document.createElement("div");
+			dom.appendChild(instruction);
+			instruction.className = "instruction";
+			instruction.innerHTML = "☝️ drag slider to guess!";
+		}
+
 		// Show answer button
 		var answerButton = document.createElement("div");
 		answerButton.className = "answer_button";
@@ -205,6 +222,8 @@ function addQuestion(config){
 		answerButton.innerHTML = "(guess first!)";
 		answerButton.onclick = function(){
 			
+			if(instruction) instruction.style.display = "none";
+
 			guessSlider.input.disabled = true;
 			answerButton.style.display = "none";
 			answerLabel.style.opacity = 1;

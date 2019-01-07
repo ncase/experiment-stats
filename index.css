@@ -30,6 +30,12 @@ SPLASH SCREENS
 
 	text-align: center;
 }
+#survey_embed{
+  margin-top: 10px;
+  background: rgba(0,0,0,0.1);
+  background-image: url(splash/survey.png);
+  background-size: 600px auto;
+}
 
 /*****************************
 
@@ -107,6 +113,10 @@ THE STATS
 .footnote{
 	font-size: 0.9em;
 	text-align: right;
+}
+.instruction{
+  font-size: 0.9em;
+  text-align: center;
 }
 
 /*****************************

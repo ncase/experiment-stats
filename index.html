@@ -8,15 +8,16 @@
 
 <!-- Intro Screen -->
 <div id="intro" class="fullscreen fadeable" style="opacity:1">
-	<div>
-		foo bar foo bar foo bar foo bar 
-		foo bar foo bar foo bar foo bar 
-		foo bar foo bar foo bar foo bar 
-		foo bar foo bar foo bar foo bar 
-		foo bar foo bar foo bar foo bar 
-		foo bar foo bar foo bar foo bar
-		<div class="white_button" onclick='lets_go()'>
-			let's go! ➡️
+	<div style="margin-top: 100px;">
+		<h2>What's the best way to understand numbers?</h2>
+		This is a 7-minute experiment to see if stats –
+		shown in different ways – can be more memorable.
+		You'll be shown 10 stats about the world, then given a quick, anonymous survey.
+		At the end of January, I'll analyze the results,
+		and we'll know what makes data stick!
+
+		<div class="white_button" onclick='lets_go()' style="width:400px; margin-top:30px;">
+			let's go! for science! ➡️
 		</div>
 	</div>
 </div>
@@ -28,13 +29,14 @@
 <!-- Survey Screen -->
 <div id="survey" class="fullscreen fadeable">
 	<div>
-		survey survey survey survey survey survey 
-		survey survey survey survey survey survey 
-		survey survey survey survey survey survey 
-		survey survey survey survey survey survey 
-		<div id="survey_foobar"></div>
-		<div class="white_button" onclick='showScreen("debrief")'>
-			done ➡️
+		And now, a quick (5 min) anonymous survey!
+		<div id="survey_embed"></div>
+		<div class="white_button" onclick="showScreen('debrief')"
+			style="width: 450px;background: #ff4040;color: #fff;">
+			ok, submitted - continue! ➡️
+		</div>
+		<div style="text-align: center;font-size: 16px;color: #fff;margin-bottom: 400px;">
+			(plz click <i>ONLY AFTER</i> you've hit the SUBMIT button in the above form!)
 		</div>
 	</div>
 </div>
@@ -48,12 +50,31 @@
 		<span id="debrief_experimental">
 		You were in the <b>experimental group</b>.
 		</span>
-		debrief debrief debrief debrief debrief 
-		debrief debrief debrief debrief debrief 
-		debrief debrief debrief debrief debrief 
+		This experiment was designed to see if
+		being asked to <i>predict</i> a statistic before seeing it (experimental)
+		is better for memory than simply being shown the statistic (control).
+
 		<br><br>
-		<a href="#" onclick="play_control()">play control</a> |
-		<a href="#" onclick="play_experimental()">play experimental</a>
+
+		If you'd like to see what the other group got, here:<br>
+		<b><a href="#" onclick="play_control()">play control</a> |
+		<a href="#" onclick="play_experimental()">play experimental</a></b>
+
+		<br><br>
+
+		If you'd like to see this experiment's results when it's out (end of Jan 2019),
+		you can follow
+		<a href="https://blog.ncase.me/" target="_blank">my blog</a> or
+		<a href="https://twitter.com/ncasenmare" target="_blank">Twitter</a>.
+		I was inspired by New York Times' interactive
+		<a href="https://www.nytimes.com/interactive/2017/04/14/upshot/drug-overdose-epidemic-you-draw-it.html" target="_blank">You Draw It</a>,
+		and all stats came from
+		<a href="https://ourworldindata.org/" target="_blank">Our World In Data</a>.
+
+		<br><br>
+
+		Thank you for helping us do ✨<b>SCIENCE!</b>✨
+
 	</div>
 </div>
 
