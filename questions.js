@@ -16,9 +16,9 @@ var QUESTIONS = [
 	// Air Pollution
 	{
 		img: "facts/air.png",
-		q: "How has air pollution changed over time?",
-		label: "From 1990 to 2016, air pollution <b>{decreased by [N]%|stayed the same|increased by [N]%}</b>",
-		label2: "From 1990 to 2016, air pollution <b>{decreased by [N]%|stayed the same|increased by [N]%}</b>",
+		q: "How has air particle pollution changed over time?",
+		label: "From 1990 to 2016, air particle pollution <b>{decreased by [N]%|stayed the same|increased by [N]%}</b>",
+		label2: "From 1990 to 2016, air particle pollution <b>{decreased by [N]%|stayed the same|increased by [N]%}</b>",
 		slider:{ min:-100, max:100, step:1 },
 		defaultValue: 0,
 		answerValue: 25,

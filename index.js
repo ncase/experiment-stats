@@ -42,7 +42,6 @@ function play_experimental(){
 	showScreen("stats");
 }
 function lets_go(){
-	localStorage.setItem('been_here_before', 'YUP');
 	showScreen("stats");
 }
 
@@ -84,6 +83,8 @@ function showScreen(screen_name){
 
 			break;
 		case "survey":
+	
+			localStorage.setItem('been_here_before', 'YUP'); // YUP
 			
 			// show the right survey (or revisit/patreon)
 			var survey_link;
@@ -98,6 +99,8 @@ function showScreen(screen_name){
 
 			break;
 		case "debrief":
+
+			localStorage.setItem('been_here_before', 'YUP'); // YUP
 
 			window.SKIP_TO_DEBRIEF = true; // next time, just skip!
 
