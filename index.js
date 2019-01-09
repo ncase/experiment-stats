@@ -23,6 +23,14 @@ window.onload = function(){
 		window.GIVE_REVISIT_SURVEY = true;
 	}
 
+	// Also, if it's Firefox, screw it, add some CSS
+	var isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
+	if(isFirefox){
+		var style = document.createElement("style");
+		style.innerHTML = "div[slider=yes] > input{ top: 13px; }";
+		document.head.appendChild(style);
+	}
+
 };
 
 
@@ -89,13 +97,13 @@ function showScreen(screen_name){
 			// show the right survey (or revisit/patreon)
 			var survey_link;
 			if(window.GIVE_REVISIT_SURVEY){
-				survey_link = "1FAIpQLScyKSri3VfAP-D9YicotA3ozM9hIutbTiQhJZDKPIIaQa1cjw"; // revisit
+				survey_link = "1FAIpQLScRpihPgksOgbFESsPxHSVly3w2p6t-Fujz33I1knZUDls7GQ"; // revisit
 			}else if(window.CONDITION=="control"){
-				survey_link = "1FAIpQLSdcOenaD3Ta6-E2q613dpE3DUJAcDrpu2OpxFUW18s1ZjoH4A"; // control
+				survey_link = "1FAIpQLSeFrh33qIptNrKAexzKG9X1cetHsGMk2D7sW6iHCpGSEZ1suQ"; // control
 			}else if(window.CONDITION=="experimental"){
-				survey_link = "1FAIpQLSeyubO7738LVv-FLGI6X768khaSxxB0FpBEC1v3PBdnNOA-9Q"; // experimental
+				survey_link = "1FAIpQLScIkUAophjhx4iNkHs5Xe8Wv3xgbD-KWbKcX2Y2R6sOxMvcCg"; // experimental
 			}
-			$("#survey_embed").innerHTML = '<iframe src="https://docs.google.com/forms/d/e/'+survey_link+'/viewform?embedded=true" width="600" height="3300" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>';
+			$("#survey_embed").innerHTML = '<iframe src="https://docs.google.com/forms/d/e/'+survey_link+'/viewform?embedded=true" width="600" height="3010" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>';
 
 			break;
 		case "debrief":
@@ -107,10 +115,14 @@ function showScreen(screen_name){
 			// show the alternative
 			$("#debrief_control").style.display = "none";
 			$("#debrief_experimental").style.display = "none";
+			$("#debrief_control_2").style.display = "none";
+			$("#debrief_experimental_2").style.display = "none";
 			if(window.CONDITION=="control"){
 				$("#debrief_control").style.display = "inline";
+				$("#debrief_control_2").style.display = "inline";
 			}else{
 				$("#debrief_experimental").style.display = "inline";
+				$("#debrief_experimental_2").style.display = "inline";
 			}
 
 			break;
