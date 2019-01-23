@@ -1,0 +1,147 @@
+<!DOCTYPE>
+<html>
+<head>
+	
+	<!-- Meta Stuff -->
+	<title>Ten World Stats</title>
+	<meta name="description" content="a 7-min web experiment"/> 
+	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+	<meta content="utf-8" http-equiv="encoding">
+	<meta charset="utf-8">
+	<link rel="icon" type="image/png" href="favicon.png">
+	
+	<!-- Styles -->
+	<link rel="stylesheet" type="text/css" href="results.css">
+	<link rel="stylesheet" type="text/css" href="bigfoot-default.css">
+	<meta name="viewport" content="width=600">
+
+</head>
+<body>
+
+<div id="words">
+
+<div id="section_1">
+	<p>
+		Every day, we're bombarded with statistics on economics, politics, science, etc.
+		<sup id="fnref:1">
+	        <a href="#fn:1" rel="footnote">1</a>
+	    </sup>
+		But too often, numbers go in one eye and out the other. So the question is:
+	</p>
+	<p>
+		<b>How do we make statistics more sticky?</b>
+	</p>
+	<p>
+		Take a wild guess on these three stats:
+	</p>
+	<div class="guesser" id="violence">
+	</div>
+</div>
+
+<div id="section_2" class="fade" style="display:none">
+	<div class="guesser" id="co2">
+	</div>
+</div>
+
+<div id="section_3" class="fade" style="display:none">
+	<div class="guesser" id="nukes">
+	</div>
+</div>
+
+<div id="section_4" class="fade" style="display:none">
+
+	<p>These &quot;You Predict It&quot; snippets were part of a <em>randomized controlled experiment</em> I did earlier this month. I was inspired by New York Times' <a href="https://www.nytimes.com/interactive/2017/01/15/us/politics/you-draw-obama-legacy.html">You Draw It</a>, where you draw a graph <em>before</em> seeing the true graph, visually pitting your expectations against reality. What you played above was my minimalist take on the same idea: guess a number, see a number, that's <em>it</em>.</p>
+
+	<p>In my experiment, people went to a site, and were randomly assigned to control or experimental. Both groups saw the same 10 statistics, presented in random order. (Why 10? Because short-term memory can only hold a few items at a time – estimates range from 3 to 7 &quot;chunks&quot; – and I wanted to overwhelm short-term memory) Control group only saw the stats. Experimental group, like you did above, <em>predicted</em> the stats before seeing them. Afterwards, both groups took a survey + memory recall test.</p>
+
+	<p>// pic of experiment design</p>
+
+	<p>The theory is that, by making a prediction &amp; seeing it (mis)match reality, this creates what cognitive scientists call &quot;germane&quot; cognitive load, which helps you learn better. (as opposed to &quot;extraneous&quot; cognitive load, which distracts you from learning) And in fact, multiple studies had already shown that confronting your misconceptions helps you learn better, whether that's through prediction[crouch, hullman] or through direct refutation.[muller]</p>
+
+	<p>I'll admit I'm not a neutral observer. I make interactive learn-by-playing things, and I wanted to do this experiment in part to validate my hunches. To counter against confirmation bias, I posted <a href="">a pre-registration</a> of my hypothesis and analysis methods.
+	So, <a href="">in my pre-registration</a>, I hypothesized that my minimalist &quot;Predict It First&quot; experiment should create at least a <em>small</em>, positive increase in memory retention.</p>
+
+	<p>But when the data came in (with sample size N=1000!) and I analyzed the results, to my great surprise...</p>
+
+	<p>Well... what do <em>you</em> predict happened?</p>
+
+	<div class="guesser" id="result">
+	</div>
+
+</div>
+
+<div id="section_5" class="fade" style="display:none">
+
+	<p>That's right: <em>null result.</em></p>
+
+	<p>Guess my whole career's a lie!</p>
+
+	<p>
+	<audio controls src="trombone.wav"></audio>
+	</p>
+
+	<p>So after performing the scientific routine of “moping around for a few days”, I sucked it up and embraced the null. Because 1) People <em>not</em> publishing their nulls is why we're in a replication crisis, so I should do the right thing. But also, 2) Science is like the world's biggest Sudoku puzzle, where you get to the right answer mostly by process of elimination. Nulls are exactly that: elimination.</p>
+
+	<p>Because these results <em>do</em> show a bizarre puzzle. When people were asked to predict the numbers first, they <em>did</em> report liking it more (d=0.5, p&lt;0), and they <em>did</em> report finding the stats more surprising (d=0.5, p&lt;0)... and yet finding something more likeable <em>and</em> surprising <em>and</em> confronting your misconceptions was <em>STILL not enough to increase memory retention.</em></p>
+
+	<p>// graphs</p>
+
+	<p>Why is that?</p>
+
+	<p>I think the most likely reason comes from comparing my study to all the other studies[crouch, huller, muller] that <em>did</em> find that confronting misconceptions helps memory retention. <strong>All these other studies taught &amp; tested people on just ONE topic</strong> – physics, voter demographics, smartphone prices – and never mixed the topics. My experiment showed <em>10 different stats in 10 different topics</em> within a 5-minute timespan.</p>
+
+	<p>It's possible I got exactly what I wanted: with 10 items, I overwhelmed short-term memory. Therefore, any potential gains from predicting-it-first got wiped out.
+	<strong>DO NOT OVERWHELM COGNITIVE LOAD</strong></p>
+
+	<p>// &quot;Germane&quot; and &quot;extraneous&quot; cognitive load</p>
+
+	<hr>
+
+	<p>So, now what?</p>
+
+	<p>I could investigate this question of &quot;overwhelming cognitive load&quot; more thoroughly in a future experiment. Or investigate other interesting questions in cognitive science.</p>
+
+	<p>Either way, after years of making games to aid learning, I think it'd be valuable for me to <em>also</em> do (amateur) science on learning. Theory without practice can get lost in the clouds. Practice without theory can get lost down a blind alley. Maybe by simultaneously doing science &amp; applied craft, I can contribute to both?</p>
+
+	<p>That's my hypothesis, anyway.</p>
+
+	<p>It's time to test that.</p>
+
+	<div class="footnotes">
+		<ol>
+		    <li class="footnote" id="fn:1">
+		        <p>footnote.<a href="#fnref:1" title="return to article"> ↩</a><p>
+		    </li>
+		</ol>
+	</div>
+
+</div>
+
+</div>
+
+</body>
+</html>
+
+<script src="results.js"></script>
+
+<script src="jquery-1.8.3.min.js"></script>
+<script src="bigfoot.min.js"></script>
+<script>
+$.bigfoot({
+	buttonMarkup:'<div class="bigfoot-footnote__container">'+
+	  '<button href="#" class="bigfoot-footnote__button" rel="footnote"'+
+	     'id="{{SUP:data-footnote-backlink-ref}}"'+
+	     'data-footnote-number="{{FOOTNOTENUM}}"'+
+	     'data-footnote-identifier="{{FOOTNOTEID}}"'+
+	     'alt="See Footnote {{FOOTNOTENUM}}"'+
+	     'data-footnote-content="{{FOOTNOTECONTENT}}">'+
+	     
+	     '{{FOOTNOTENUM}}'+
+	     //'<svg class="bigfoot-footnote__button__circle" viewbox="0 0 6 6" preserveAspectRatio="xMinYMin"><circle r="3" cx="3" cy="3" fill="white"></circle></svg>'+
+	     //'<svg class="bigfoot-footnote__button__circle" viewbox="0 0 6 6" preserveAspectRatio="xMinYMin"><circle r="3" cx="3" cy="3" fill="white"></circle></svg>'+
+	     //'<svg class="bigfoot-footnote__button__circle" viewbox="0 0 6 6" preserveAspectRatio="xMinYMin"><circle r="3" cx="3" cy="3" fill="white"></circle></svg>'+
+	     
+	  '</button>'+
+	'</div>'
+});
+</script>
