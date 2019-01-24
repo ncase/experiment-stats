@@ -12,7 +12,7 @@
 	
 	<!-- Styles -->
 	<link rel="stylesheet" type="text/css" href="results.css">
-	<link rel="stylesheet" type="text/css" href="bigfoot-default.css">
+	<link rel="stylesheet" type="text/css" href="bigfoot-number.css">
 	<meta name="viewport" content="width=600">
 
 </head>
@@ -107,6 +107,8 @@
 
 	<p>It's time to test that.</p>
 
+	<hr>
+
 	<div class="footnotes">
 		<ol>
 		    <li class="footnote" id="fn:1">
@@ -128,20 +130,6 @@
 <script src="bigfoot.min.js"></script>
 <script>
 $.bigfoot({
-	buttonMarkup:'<div class="bigfoot-footnote__container">'+
-	  '<button href="#" class="bigfoot-footnote__button" rel="footnote"'+
-	     'id="{{SUP:data-footnote-backlink-ref}}"'+
-	     'data-footnote-number="{{FOOTNOTENUM}}"'+
-	     'data-footnote-identifier="{{FOOTNOTEID}}"'+
-	     'alt="See Footnote {{FOOTNOTENUM}}"'+
-	     'data-footnote-content="{{FOOTNOTECONTENT}}">'+
-	     
-	     '{{FOOTNOTENUM}}'+
-	     //'<svg class="bigfoot-footnote__button__circle" viewbox="0 0 6 6" preserveAspectRatio="xMinYMin"><circle r="3" cx="3" cy="3" fill="white"></circle></svg>'+
-	     //'<svg class="bigfoot-footnote__button__circle" viewbox="0 0 6 6" preserveAspectRatio="xMinYMin"><circle r="3" cx="3" cy="3" fill="white"></circle></svg>'+
-	     //'<svg class="bigfoot-footnote__button__circle" viewbox="0 0 6 6" preserveAspectRatio="xMinYMin"><circle r="3" cx="3" cy="3" fill="white"></circle></svg>'+
-	     
-	  '</button>'+
-	'</div>'
+	actionOriginalFN: "ignore"
 });
 </script>
