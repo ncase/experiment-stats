@@ -23,13 +23,10 @@
 <div id="section_1">
 	<p>
 		Every day, we're bombarded with statistics on economics, politics, science, etc.
-		<sup id="fnref:1">
-	        <a href="#fn:1" rel="footnote">1</a>
-	    </sup>
 		But too often, numbers go in one eye and out the other. So the question is:
 	</p>
 	<p>
-		<b>How do we make statistics more sticky?</b>
+		<b>How do you make statistics more sticky?</b>
 	</p>
 	<p>
 		Take a wild guess on these three stats:
@@ -50,20 +47,56 @@
 
 <div id="section_4" class="fade" style="display:none">
 
-	<p>These &quot;You Predict It&quot; snippets were part of a <em>randomized controlled experiment</em> I did earlier this month. I was inspired by New York Times' <a href="https://www.nytimes.com/interactive/2017/01/15/us/politics/you-draw-obama-legacy.html">You Draw It</a>, where you draw a graph <em>before</em> seeing the true graph, visually pitting your expectations against reality. What you played above was my minimalist take on the same idea: guess a number, see a number, that's <em>it</em>.</p>
+	<p>
+		This guessing game was part of
+		<a href="https://ncase.me/experiment-stats/">a randomized controlled web-experiment</a>
+		I did earlier this month. Inspired by New York Times'
+		<a href="https://www.nytimes.com/interactive/2017/01/15/us/politics/you-draw-obama-legacy.html">You Draw It</a>,
+		I wanted to see if predicting a statistic <i>before</i> seeing it makes it more memorable.
+	</p>
 
-	<p>In my experiment, people went to a site, and were randomly assigned to control or experimental. Both groups saw the same 10 statistics, presented in random order. (Why 10? Because short-term memory can only hold a few items at a time – estimates range from 3 to 7 &quot;chunks&quot; – and I wanted to overwhelm short-term memory) Control group only saw the stats. Experimental group, like you did above, <em>predicted</em> the stats before seeing them. Afterwards, both groups took a survey + memory recall test.</p>
+	<p>Here was my experimental design:</p>
 
-	<p>// pic of experiment design</p>
+	<p><img src="design.png" alt="experimental design"></p>
 
-	<p>The theory is that, by making a prediction &amp; seeing it (mis)match reality, this creates what cognitive scientists call &quot;germane&quot; cognitive load, which helps you learn better. (as opposed to &quot;extraneous&quot; cognitive load, which distracts you from learning) And in fact, multiple studies had already shown that confronting your misconceptions helps you learn better, whether that's through prediction[crouch, hullman] or through direct refutation.[muller]</p>
+	<p>
+		Both groups see 10 statistics about the world, in random order.
+		Why 10? Because I wanted to overload short-term memory, which cognitive scientists
+		have estimated can only hold 7±2 "chunks".
+		<sup id="fnref:1">
+		    <a href="#fn:1" rel="footnote">1</a>
+		</sup>
+		(Or maybe 3±1
+		<sup id="fnref:2">
+		    <a href="#fn:2" rel="footnote">2</a>
+		</sup>)
+	</p>
 
-	<p>I'll admit I'm not a neutral observer. I make interactive learn-by-playing things, and I wanted to do this experiment in part to validate my hunches. To counter against confirmation bias, I posted <a href="">a pre-registration</a> of my hypothesis and analysis methods.
-	So, <a href="">in my pre-registration</a>, I hypothesized that my minimalist &quot;Predict It First&quot; experiment should create at least a <em>small</em>, positive increase in memory retention.</p>
+	<p>
+		Previous studies have already shown that confronting your misconceptions helps you learn better,
+		whether that's directly
+		<sup id="fnref:3">
+		    <a href="#fn:3" rel="footnote">3</a>
+		</sup>
+		or indirectly through prediction.
+		<sup id="fnref:4">
+		    <a href="#fn:4" rel="footnote">4</a>
+		</sup>
+		<sup id="fnref:5">
+		    <a href="#fn:5" rel="footnote">5</a>
+		</sup>
+		So,
+		<a href="https://blog.ncase.me/my-experiment-pre-registration/">when I "pre-registered" my experiment</a>,
+		I hypothesized that "predict it first" should create a <i>small</i> increase in memory retention.
+	</p>
 
-	<p>But when the data came in (with sample size N=1000!) and I analyzed the results, to my great surprise...</p>
+	<p>
+		But when I analyzed the data (N=1620 responses), to my great surprise...
+	</p>
 
-	<p>Well... what do <em>you</em> predict happened?</p>
+	<p>
+		Well... what do <i>you</i> predict happened?
+	</p>
 
 	<div class="guesser" id="result">
 	</div>
@@ -72,47 +105,164 @@
 
 <div id="section_5" class="fade" style="display:none">
 
-	<p>That's right: <em>null result.</em></p>
-
-	<p>Guess my whole career's a lie!</p>
+	<p>
+		That's right: <i>null result.</i>
+	</p>
 
 	<p>
 	<audio controls src="trombone.wav"></audio>
 	</p>
 
-	<p>So after performing the scientific routine of “moping around for a few days”, I sucked it up and embraced the null. Because 1) People <em>not</em> publishing their nulls is why we're in a replication crisis, so I should do the right thing. But also, 2) Science is like the world's biggest Sudoku puzzle, where you get to the right answer mostly by process of elimination. Nulls are exactly that: elimination.</p>
+	<p>
+		So after performing the scientific protocol of "moping around for a few days",
+		I embraced the null. Because, this null <i>was</i> puzzling.
+		People in the experimental "predict it first" group reported <i>liking</i>
+		the content more (d=0.55,
+		<sup id="fnref:6">
+		    <a href="#fn:6" rel="footnote">6</a>
+		</sup>
+		p&lt;0.001), and reported being <i>surprised</i> more (d=0.51, p&lt;0.001)...
+		<b>yet that <i>still</i> wasn't sufficient for helping people actually <i>remember</i> more.</b>
+		<sup id="fnref:7">
+		    <a href="#fn:7" rel="footnote">7</a>
+		</sup>
+	</p>
 
-	<p>Because these results <em>do</em> show a bizarre puzzle. When people were asked to predict the numbers first, they <em>did</em> report liking it more (d=0.5, p&lt;0), and they <em>did</em> report finding the stats more surprising (d=0.5, p&lt;0)... and yet finding something more likeable <em>and</em> surprising <em>and</em> confronting your misconceptions was <em>STILL not enough to increase memory retention.</em></p>
+	<p><img src="metrics1.png" alt="absolute difference"></p>
 
-	<p>// graphs</p>
+	<p><img src="metrics2.png" alt="effect sizes"></p>
+	
+	<p>
+		Therefore, my experiment (with its null result) must have had something different
+		from all the previous "confront your misconceptions first" experiments
+		(with their positive results).
+	</p>
 
-	<p>Why is that?</p>
+	<p>
+		I think the big difference was this:
+		<b>all the other studies taught &amp; tested people on ONE topic.</b>
+		Whether that's quantum mechanics, voter demographics, smartphone prices –
+		they showed information on a single topic, and never mixed topics.
+	</p>
 
-	<p>I think the most likely reason comes from comparing my study to all the other studies[crouch, huller, muller] that <em>did</em> find that confronting misconceptions helps memory retention. <strong>All these other studies taught &amp; tested people on just ONE topic</strong> – physics, voter demographics, smartphone prices – and never mixed the topics. My experiment showed <em>10 different stats in 10 different topics</em> within a 5-minute timespan.</p>
+	<p>
+		In contrast, my experiment showed <i>10 different stats in 10 different topics</i> in five minutes.
+		I think I got exactly what I wished for: I overloaded short-term memory.
+		If "predict it first" had any effect, it would have been wiped out by the sheer cognitive load
+		of trying to hold 10 unrelated facts in one's head.
+	</p>
 
-	<p>It's possible I got exactly what I wanted: with 10 items, I overwhelmed short-term memory. Therefore, any potential gains from predicting-it-first got wiped out.
-	<strong>DO NOT OVERWHELM COGNITIVE LOAD</strong></p>
+	<p><img src="splash.png" alt="sploosh"></p>
 
-	<p>// &quot;Germane&quot; and &quot;extraneous&quot; cognitive load</p>
+	<p>
+		In hindsight, that sounds like an obvious mistake, but "cram lots of ideas in a short time"
+		<i>is what a lot of online educational content does.</i>
+		Top 10 Lists, lightning-pace YouTube videos, etc.
+		My null result implies a hard lesson for "educational content" makers:
+		<b>no matter how interesting or surprising you make your content,
+		if you go against basic cognitive science principles, it'll all be for naught.</b>
+	</p>
+
+	<p>
+		I've been making "interactive explainers" for years.
+		I think it'd be good for me to keep doing these (admittedly amateur) cognitive science experiments.
+		Practice without theory can get lost down a blind alley,
+		theory without practice can get lost in the clouds.
+		<sup id="fnref:8">
+		    <a href="#fn:8" rel="footnote">8</a>
+		</sup>
+		Maybe by doing both, I can help the two fields learn from each other.
+	</p>
+
+	<p>
+		That's my hypothesis, anyway.
+	</p>
+
+	<p>
+		It's time to test that.
+	</p>
 
 	<hr>
 
-	<p>So, now what?</p>
+	<p>
+		Special thanks to my Patreon supporters for helping me do this experiment!
+		See their names &amp; drawings here
+		&middot;
+		Help me make more games/science
+	</p>
 
-	<p>I could investigate this question of &quot;overwhelming cognitive load&quot; more thoroughly in a future experiment. Or investigate other interesting questions in cognitive science.</p>
+	<p>
+		Also huge thanks to these folks for giving design/science advice:
+		[explorables folks] [jessica hullman]
+	</p>
 
-	<p>Either way, after years of making games to aid learning, I think it'd be valuable for me to <em>also</em> do (amateur) science on learning. Theory without practice can get lost in the clouds. Practice without theory can get lost down a blind alley. Maybe by simultaneously doing science &amp; applied craft, I can contribute to both?</p>
+	<p>
+		Play the experiment:
+		<a href="https://ncase.me/experiment-stats/">randomized</a>
+		&middot;
+		<a href="https://ncase.me/experiment-stats/#control">control</a>
+		&middot;
+		<a href="https://ncase.me/experiment-stats/#experimental">experimental</a>
+	</p>
 
-	<p>That's my hypothesis, anyway.</p>
+	<p>
+		My data:
+		<a href="data/raw.zip">raw (zip)</a>
+		&middot;
+		<a href="data/cleaned.csv">cleaned (csv)</a>
+	</p>
 
-	<p>It's time to test that.</p>
+	<p>
+		My data-cleaning code:
+		<a href="data/Cleaning.ipynb">jupyter notebook</a>
+		&middot;
+		<a href="data/Cleaning.html">html export</a>
+	</p>
+
+	<p>
+		My data-analysis code:
+		<a href="data/Analyzing.ipynb">jupyter notebook</a>
+		&middot;
+		<a href="data/Analyzing.html">html export</a>
+	</p>
+
+	<p>
+		Experiment source code:
+		<a href="https://github.com/ncase/experiment-stats">github</a>
+	</p>
 
 	<hr>
+
+	<p>Feetnotes:</p>
 
 	<div class="footnotes">
 		<ol>
 		    <li class="footnote" id="fn:1">
-		        <p>footnote.<a href="#fnref:1" title="return to article"> ↩</a><p>
+		        <p>7+/2.<a href="#fnref:1" title="return to article"> ↩</a><p>
+		    </li>
+		    <li class="footnote" id="fn:2">
+		        <p>3+-2.<a href="#fnref:2" title="return to article"> ↩</a><p>
+		    </li>
+		    <li class="footnote" id="fn:3">
+		        <p>muller.<a href="#fnref:3" title="return to article"> ↩</a><p>
+		    </li>
+		    <li class="footnote" id="fn:4">
+		        <p>crouch.<a href="#fnref:4" title="return to article"> ↩</a><p>
+		    </li>
+		    <li class="footnote" id="fn:5">
+		        <p>hullman.<a href="#fnref:5" title="return to article"> ↩</a><p>
+		    </li>
+		    <li class="footnote" id="fn:6">
+		        <p>cohen's middle d.<a href="#fnref:6" title="return to article"> ↩</a><p>
+		    </li>
+		    <li class="footnote" id="fn:7">
+		        <p>animation study.<a href="#fnref:7" title="return to article"> ↩</a><p>
+		    </li>
+		    <li class="footnote" id="fn:8">
+		        <p>pasteur's quadrant. | duncan watts social science? <a href="#fnref:8" title="return to article"> ↩</a><p>
+		    </li>
+		    <li class="footnote" id="fn:9">
+		        <p>sad trombone sound<p>
 		    </li>
 		</ol>
 	</div>

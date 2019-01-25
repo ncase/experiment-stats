@@ -33,12 +33,12 @@ window.QUESTIONS = {
 		unlock: "section_4"
 	},
 	result: {
-		img: "../facts/nuke.png",
-		q: "sadasdasdsadasdass",
-		label: "From 1986 to 2014, the # of nukes <b>{decreased by [N]%|stayed the same|increased by [N]%}</b>",
+		img: "data.png",
+		q: "How did the experiment 'predict-it-first' group do, compared to the control 'just-see-the-stats' group?",
+		label: "The experimental group remembered <b>{[N]% less than|as much as|[N]% more than}</b> control",
 		slider:{ min:-100, max:100, step:1 },
 		defaultValue: 0,
-		answerValue: -84,
+		answerValue: 0,
 		//footnote: "from approximately 64,449 to 10,145",
 		//source: "https://ourworldindata.org/grapher/number-of-nuclear-warheads-in-the-inventory-of-the-nuclear-powers",
 		unlock: "section_5"

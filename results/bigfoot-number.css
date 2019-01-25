@@ -249,13 +249,14 @@
 }
 
 .bigfoot-footnote__button {
-  position: relative;
-  height: 1.5em;
-  width: 1.5em;
-  border-radius: 2em;
-  /* font-size: 20px; */
-  top: -8px;
-  left: -6px;
+     position: relative;
+    height: 1.3em;
+    width: 1.3em;
+    border-radius: 2em;
+    /* font-size: 20px; */
+    top: -8px;
+    left: -7px;
+    margin-right: -0.3em;
 }
 .bigfoot-footnote__button:after {
   content: attr(data-footnote-number);
