@@ -7,6 +7,7 @@ window.onload = function(){
 	gotoCondition("random");
 	
 	// Give revisit if from Patreon, or have been here before...
+	/*
 	if(window.location.hash=="#patreon"){
 		gotoCondition("experimental"); // also give patreon's "experimental"
 		window.GIVE_REVISIT_SURVEY = true;
@@ -22,6 +23,9 @@ window.onload = function(){
 	if(window.BEEN_HERE_BEFORE){
 		window.GIVE_REVISIT_SURVEY = true;
 	}
+	*/
+	window.SKIP_TO_DEBRIEF = true;
+	window.GIVE_REVISIT_SURVEY = true;
 
 	// Also, if it's Firefox, screw it, add some CSS
 	var isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;

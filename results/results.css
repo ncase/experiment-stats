@@ -19,6 +19,9 @@ input{
 a{
 	color: #58a6da;
 }
+b{
+  font-weight: bold;
+}
 
 #words{
 	width:600px;

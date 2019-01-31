@@ -1,0 +1,15 @@
+body{
+	margin: 100px;
+	font-size: 22px;
+	font-family: Helvetica, Arial, sans-serif;
+	font-weight: 100;
+	text-align: center;
+}
+img{
+	width:200px;
+	margin: 15px 0 40px 0;
+}
+hr{
+	border:none;
+	border-top: 6px dashed #ddd;
+}
